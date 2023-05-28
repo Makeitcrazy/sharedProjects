@@ -105,6 +105,7 @@ void displayTarget()
 int main()
 {
     char osystem;
+// Determine the operating system
 #if defined(_WIN32)
     osystem = 'W';
 #elif defined(__linux__)
@@ -133,7 +134,9 @@ int main()
     }
     else
     {
+        // if the OS is not Windows or Mac, print out the error message
         cout << "Unknown Operating System" << endl;
+        // return 0 to exit the program
         return 0;
     }
 

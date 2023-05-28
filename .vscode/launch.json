@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/dannytan/Desktop/sharedProjects",
+      "program": "/Users/dannytan/Desktop/sharedProjects/build/Debug/outDebug"
+    }
+  ]
+}
