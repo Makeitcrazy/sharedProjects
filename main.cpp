@@ -198,5 +198,3 @@ int main()
     // getline(cin, sentence);
     return 0;
 }
-
-//test
