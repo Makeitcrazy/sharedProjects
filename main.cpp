@@ -12,7 +12,7 @@ using namespace std;
 
 void studyCountdown()
 {
-    const int seconds = 2400; // 2700
+    const int seconds = 5; // 2700
     for (int i = seconds; i >= 0; i--)
     {
         if (i > 0)
@@ -119,18 +119,18 @@ int main()
     int frame_width = 40;
     char opt;
     displayTarget();
-    cout << "If you are ready, please any button to start counting!" << endl;
 
     // Pause the screen base on the OS
     if (osystem == 'W')
     {
         // pause the screen on Window OS
+        cout << "If you are ready, please any button to start counting!" << endl;
         system("pause");
     }
     else if (osystem == 'M')
     {
         // pasue the screen on Mac OS
-        system("read -n 1 -s -p \"Press any key to continue...\"");
+        system("read -n 1 -s -p \"If you are ready, please any button to start counting!\n\"");
     }
     else
     {
