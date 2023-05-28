@@ -110,12 +110,12 @@ string checkOS()
     string osystem;
 // Determine the operating system
 #if defined(_WIN32)
-    osystem = 'W32';
+    osystem = "W32";
     // // pause the screen on Window OS
     // cout << "If you are ready, please any button to start counting!" << endl;
     // system("pause");
 #elif defined(_WIN64)
-    osystem = 'W64';
+    osystem = "W64";
     // // pause the screen on Window OS
     // cout << "If you are ready, please any button to start counting!" << endl;
     // system("pause");
@@ -155,7 +155,6 @@ void clearScreen(string osystem)
 
 int main()
 {
-    int frame_width = 40;
     char opt;
     displayTarget();
 
