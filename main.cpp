@@ -4,8 +4,10 @@
 #include <chrono>
 #include <sstream>
 #include <thread>
-// inport <stdlib.h> for system("pause") at Mac
+// import <stdlib.h> for system("pause") at Mac
 #include <stdlib.h>
+// import <cstdlib> for Windows
+#include <cstdlib>
 using namespace std;
 
 // Study time set to 40 minutes of focus time
@@ -102,32 +104,71 @@ void displayTarget()
     std::cout << "|" << std::string(max_line_length + 2, '-') << "|" << std::endl;
 }
 
-int main()
+string checkOS()
 {
-    char osystem;
+    // Determine the operating system
+    string osystem;
 // Determine the operating system
 #if defined(_WIN32)
-    osystem = 'W';
+    osystem = 'W32';
+    // // pause the screen on Window OS
+    // cout << "If you are ready, please any button to start counting!" << endl;
+    // system("pause");
+#elif defined(_WIN64)
+    osystem = 'W64';
+    // // pause the screen on Window OS
+    // cout << "If you are ready, please any button to start counting!" << endl;
+    // system("pause");
 #elif defined(__linux__)
     osystem = 'L';
 #elif defined(__APPLE__)
     osystem = 'M';
+    // // pasue the screen on Mac OS
+    // system("read -n 1 -s -p \"If you are ready, please any button to start counting!\n\"");
 #else
     std::cout << "Unknown Operating System" << std::endl;
+    osystem = "NULL"
+    // return 0;
 #endif
+    return osystem;
+}
 
+void clearScreen(string osystem)
+{
+    if (osystem == "W32")
+    {
+        system("cls");
+    }
+    else if (osystem == "W32")
+    {
+        system("clear");
+    }
+    else if (osystem == "M")
+    {
+        system("clear");
+    }
+    else
+    {
+        cout << "Unknown Operating System" << endl;
+    }
+}
+
+int main()
+{
     int frame_width = 40;
     char opt;
     displayTarget();
 
+    string osystem = checkOS();
+
     // Pause the screen base on the OS
-    if (osystem == 'W')
+    if (osystem == "W32" || osystem == "W32")
     {
         // pause the screen on Window OS
         cout << "If you are ready, please any button to start counting!" << endl;
         system("pause");
     }
-    else if (osystem == 'M')
+    else if (osystem == "M")
     {
         // pasue the screen on Mac OS
         system("read -n 1 -s -p \"If you are ready, please any button to start counting!\n\"");
@@ -146,9 +187,10 @@ int main()
     cin >> opt;
     while (opt != 'n')
     { // For char ''; for string "" getline for string
+        clearScreen(osystem);
+        displayTarget();
         cout << "Study time for 40 minutes count now!" << endl;
         studyCountdown();
-        displayTarget();
         cout << "Start a new study phase (type 'y' to continue or 'n' to main screen): " << endl;
         cin >> opt;
     }
