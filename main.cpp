@@ -19,7 +19,7 @@ void studyCountdown()
     {
         if (i > 0)
         {
-            cout << "Time Left:: " << i << endl;
+            cout << "Time Left:: " << i << "s" << endl;
         }
         if (i == 0)
         {
