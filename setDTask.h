@@ -20,16 +20,18 @@ void createDTasks()
 
     if (fout)
     {
-        while (fout)
+        int line_no = 1;
+        string line;
+        
+        // Read input lines until "-1" is entered
+        while (getline(cin, line) && line != "-1")
         {
-            // Input a line
-            getline(cin, line);
+            // Prepend line number to line
+            line = std::to_string(line_no) + ". " + line;
+            // Increment line number for the next iteration
+            line_no++;
 
-            // Input -1 to exit the input line
-            if (line == "-1")
-                break;
-
-            // Write into the file
+            // Write line to file
             fout << line << endl;
         }
     }
@@ -66,7 +68,6 @@ void displayDTasks()
     // std::cout << line_no << endl;
     fin.close();
 }
-
 
 // This module has so many problems
 void deleteDTask()
@@ -113,10 +114,10 @@ void deleteDTask()
         std::cout << "File Opening Unsuccessful!" << endl;
     }
 
-/* Delete line algorithm
-    Create a new text file in a folder to store the new lines
-    Move the new lines to a new file and write out in it
-*/
+    /* Delete line algorithm
+        Create a new text file in a folder to store the new lines
+        Move the new lines to a new file and write out in it
+    */
 }
 
 void clearTxtfile()

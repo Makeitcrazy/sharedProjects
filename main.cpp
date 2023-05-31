@@ -12,6 +12,7 @@
 #include "./count.h"
 #include "./checkOS.h"
 #include "./setGoals.h"
+// #include "./menu.h"
 
 
 using namespace std;
@@ -21,10 +22,15 @@ int main()
     char opt;
     displayTarget();
 
+    // menu();
+
+    // createDTasks();
+
     string osystem = checkOS();
 
     // Call study time countdown function
     studyCountdown(osystem);
+    
     cout << "Start a new study phase (type 'y' to continue or 'n' to main screen): " << endl;
     cin >> opt;
     while (opt != 'n')
