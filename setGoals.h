@@ -20,15 +20,16 @@ void displayTarget()
                        "9. Check your work! Don't get it wrong, and be careful and cautious! Think how to do it faster and quicker!\n"
                        "10. Some events show his attitudes: 1) Find AH adjusted factor; 2) Prove Alice's statement wrong; 3) No mistake! Zero Tolerance!\n\n"
                        "Philip:\n"
-                       "Be reponsible\n"
-                       "Don't be lazy e.g. rebalancing check HSSSHSC\n"
-                       "Focus on thinking: hand gesture or move to help you think and calculate\n"
-                       "Learn his excel solving skills\n\n"
+                       "1. Be reponsible\n"
+                       "2. Don't be lazy e.g. rebalancing check HSSSHSC\n"
+                       "3. Focus on thinking: hand gesture or move to help you think and calculate\n"
+                       "4. Learn his excel solving skills\n\n"
                        "Favorite Courses\n"
                        "BCIT - Data Structure and Algorithm Analysis\n"
                        "BCIT - Application Development with C++\n"
                        "BCIT - Advanced Application Development with C++\n"
-                       "BCIT - Advanced Data Structure and Algorithm Analysis";
+                       "BCIT - Advanced Data Structure and Algorithm Analysis\n\n"
+                       "Remarks:\n";
 
         // Determine the maximum length of a line in the text
     size_t max_line_length = 135;

@@ -9,7 +9,7 @@ string checkOS()
 #if defined(_WIN32)
     osystem = "W32";
     // pause the screen on Window OS
-    cout << "If you are ready, please any button to start counting!" << endl;
+    std::cout << "If you are ready, please any button to start counting!" << endl;
     system("pause");
 #elif defined(_WIN64)
     osystem = "W64";
@@ -42,6 +42,6 @@ void clearScreen(string osystem)
     }
     else
     {
-        cout << "Unknown Operating System" << endl;
+        std::cout << "Unknown Operating System" << endl;
     }
 }

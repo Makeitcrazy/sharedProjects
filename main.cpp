@@ -8,13 +8,13 @@
 #include <stdlib.h>
 // import <cstdlib> for Windows
 #include <cstdlib>
+
+using namespace std;
+
 #include "./setDTask.h"
 #include "./count.h"
 #include "./checkOS.h"
 #include "./setGoals.h"
-
-
-using namespace std;
 
 // Study time set to 40 minutes of focus time
 // void studyCountdown(string osystem)
@@ -42,7 +42,6 @@ using namespace std;
 //         this_thread::sleep_for(chrono::seconds(1));
 //     }
 //  }
-
 
 // void displayTarget()
 // {
@@ -79,7 +78,7 @@ using namespace std;
 //     int max_leng = 0;
 //     int i = 0;
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 //     for (const char &line : text)
 //     {
 //         // std::cout << line;
@@ -162,60 +161,102 @@ using namespace std;
 //         cout << "Unknown Operating System" << endl;
 //     }
 // }
-=======
-string checkOS()
-{
-    // Determine the operating system
-    string osystem;
-// Determine the operating system
-#if defined(_WIN32)
-    osystem = "W32";
-    // pause the screen on Window OS X86
-    cout << "If you are ready, please any button to start counting!" << endl;
-    system("pause");
-#elif defined(_WIN64)
-    osystem = "W64";
-    // pause the screen on Window OS X64
-    cout << "If you are ready, please any button to start counting!" << endl;
-    system("pause");
-#elif defined(__linux__)
-    osystem = "L";
-#elif defined(__APPLE__)
-    osystem = "M";
-    // pasue the screen on Mac OS
-    system("read -n 1 -s -p \"If you are ready, please any button to start counting!\n\"");
-#else
-    std::cout << "Unknown Operating System" << std::endl;
-    osystem = "NULL"
-    // return 0;
-#endif
-    return osystem;
-}
+// =======
+// string checkOS()
+// {
+//     // Determine the operating system
+//     string osystem;
+// // Determine the operating system
+// #if defined(_WIN32)
+//     osystem = "W32";
+//     // pause the screen on Window OS X86
+//     cout << "If you are ready, please any button to start counting!" << endl;
+//     system("pause");
+// #elif defined(_WIN64)
+//     osystem = "W64";
+//     // pause the screen on Window OS X64
+//     cout << "If you are ready, please any button to start counting!" << endl;
+//     system("pause");
+// #elif defined(__linux__)
+//     osystem = "L";
+// #elif defined(__APPLE__)
+//     osystem = "M";
+//     // pasue the screen on Mac OS
+//     system("read -n 1 -s -p \"If you are ready, please any button to start counting!\n\"");
+// #else
+//     std::cout << "Unknown Operating System" << std::endl;
+//     osystem = "NULL"
+//     // return 0;
+// #endif
+//     return osystem;
+// }
 
-void clearScreen(string osystem)
-{
-    if (osystem == "W32")
-    {
-        system("cls");
-    }
-    else if (osystem == "W64" || osystem == "M")
-    {
-        system("clear");
-    }
-    else
-    {
-        cout << "Unknown Operating System" << endl;
-    }
-}
->>>>>>> 1f53197a4f2a00600ea5d544c77a3b9e6aa7577f
+// void clearScreen(string osystem)
+// {
+//     if (osystem == "W32")
+//     {
+//         system("cls");
+//     }
+//     else if (osystem == "W64" || osystem == "M")
+//     {
+//         system("clear");
+//     }
+//     else
+//     {
+//         cout << "Unknown Operating System" << endl;
+//     }
+// }
+// >>>>>>> 1f53197a4f2a00600ea5d544c77a3b9e6aa7577f
 
 int main()
 {
     char opt;
+
+    // createDTasks();
+    // displayDTasks();
+    // displayTarget();
+
+    int choice;
+
+    cout << "Would you please set up your daily tasks?" << endl;
+    cout << "1. Create Today's Schedule" << endl;
+    cout << "2. Check Today's Schedule" << endl;
+    cout << "3. Delete all Today's Schedule" << endl;
+    cout << "4. Jump to Study Countdown" << endl;
+    cout << "---------------------------------------------------------------------------------------" << endl;
+
+    cin >> choice;
+    while (choice != 4 || choice > 4)
+    {
+        switch(choice)
+        {
+            case 1:
+                createDTasks();
+                break;
+            case 2:
+                displayDTasks();
+                std::cout << endl;
+                std::cout << endl;
+                break;
+            case 3:
+                deleteDTask();
+                break;
+        }
+        cout << "Would you please set up your daily tasks?" << endl;
+        cout << "1. Create Today's Schedule" << endl;
+        cout << "2. Check Today's Schedule" << endl;
+        cout << "3. Delete all Today's Schedule" << endl;
+        cout << "4. Exit" << endl;
+        cout << "---------------------------------------------------------------------------------------" << endl;
+        cin >> choice;
+    }
+
+    displayDTasks();
+    std::cout << endl;
     displayTarget();
-
+    
     string osystem = checkOS();
-
+    
     // Call study time countdown function
     studyCountdown(osystem);
     cout << "Start a new study phase (type 'y' to continue or 'n' to main screen): " << endl;
@@ -223,7 +264,11 @@ int main()
     while (opt != 'n')
     { // For char ''; for string "" getline for string
         clearScreen(osystem);
+
+        displayDTasks();
+        std::cout << endl;
         displayTarget();
+
         cout << "Study time for 40 minutes count now!" << endl;
         studyCountdown(osystem);
         cout << "Start a new study phase (type 'y' to continue or 'n' to main screen): " << endl;

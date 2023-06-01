@@ -2,7 +2,7 @@
 
 void studyCountdown(string osystem)
 {
-    const int seconds = 5; // 2700
+    const int seconds = 2400; // 2700
     for (int i = seconds; i >= 0; i--)
     {
         if (i > 0)

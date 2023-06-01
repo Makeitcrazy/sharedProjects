@@ -1,8 +1,8 @@
 #pragma once
 
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 #include <stdlib.h>
 
 using namespace std;
@@ -10,7 +10,6 @@ using namespace std;
 void createDTasks()
 { // Creation of ofstream class object
     ofstream fout;
-
     string line;
 
     fout.open("Daily_Tasks.txt", ios::app);
@@ -23,7 +22,7 @@ void createDTasks()
         while (fout)
         {
             // Input a line
-            getline(cin, line);
+            std::getline(cin, line);
 
             // Input -1 to exit the input line
             if (line == "-1")
@@ -53,7 +52,7 @@ void displayDTasks()
     // int line_no = 0;
     if (fin)
     {
-        while (getline(fin, line))
+        while (std::getline(fin, line))
         {
             std::cout << line << endl;
             // line_no++;

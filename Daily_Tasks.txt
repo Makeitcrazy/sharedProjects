@@ -1,0 +1,8 @@
+1/6/2023:
+9-11a.m. - Coding (C++ - DSA)
+11a.m. - 12p.m. - Cooking
+12p.m. - 1p.m. - Fun
+1pm - 4pm - Coding (Neural Network)
+430pm - 540pm - Coding (C++ - Finance)
+6pm - 8pm - NBA Final
+8pm - 10pm - Coding (Neural Network)
