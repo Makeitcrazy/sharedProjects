@@ -15,7 +15,9 @@ using namespace std;
 #include "./count.h"
 #include "./checkOS.h"
 #include "./setGoals.h"
+// #include "./menu.h"
 
+<<<<<<< HEAD
 // Study time set to 40 minutes of focus time
 // void studyCountdown(string osystem)
 // {
@@ -207,16 +209,28 @@ using namespace std;
 //     }
 // }
 // >>>>>>> 1f53197a4f2a00600ea5d544c77a3b9e6aa7577f
+=======
+
+using namespace std;
+>>>>>>> b7c12a948929ca56236200930c4b33262e2d606a
 
 int main()
 {
     char opt;
 
+<<<<<<< HEAD
     // createDTasks();
     // displayDTasks();
     // displayTarget();
 
     int choice;
+=======
+    // menu();
+
+    // createDTasks();
+
+    string osystem = checkOS();
+>>>>>>> b7c12a948929ca56236200930c4b33262e2d606a
 
     cout << "Would you please set up your daily tasks?" << endl;
     cout << "1. Create Today's Schedule" << endl;
@@ -259,6 +273,7 @@ int main()
     
     // Call study time countdown function
     studyCountdown(osystem);
+    
     cout << "Start a new study phase (type 'y' to continue or 'n' to main screen): " << endl;
     cin >> opt;
     while (opt != 'n')
