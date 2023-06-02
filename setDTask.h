@@ -25,15 +25,10 @@ void createDTasks()
         // Read input lines until "-1" is entered
         while (getline(cin, line) && line != "-1")
         {
-<<<<<<< HEAD
-            // Input a line
-            std::getline(cin, line);
-=======
             // Prepend line number to line
             line = std::to_string(line_no) + ". " + line;
             // Increment line number for the next iteration
             line_no++;
->>>>>>> b7c12a948929ca56236200930c4b33262e2d606a
 
             // Write line to file
             fout << line << endl;
